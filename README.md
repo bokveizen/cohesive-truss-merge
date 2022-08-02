@@ -115,14 +115,10 @@ How to run the code:
 	python compile.py heuii.cpp heuio.cpp
 	# create the folder for results
 	mkdir -p res_txt/res_heu;
-	# format: ./heu[category:ii/io] [dataset] res_heu/[log_file_name] [k] [b] [n_i] [n_o] [n_c] [random_seed]
-	# for the sampling experiments, the algorithms only need k, n_c, and random_seed
-	# but we still keep the same inputs for consistency and alignment
-	# here, n_c is the number of randomly sampled mergers		
-	# an example (II algorithm; dataset: email;
-	# k = 10, sampling 10000 mergers;
+	# format: ./heu[category:ii/io] [dataset] res_heu/[log_file_name] [k]	
+	# an example (for inside-inside mergers; dataset: email; k = 10;
 	# log stored in res_txt/res_sampling/email_10_10000.txt)
-	./samplii email res_main/email_10_10000 10 10 100 50 10000 42;
+	./heuii email res_heu/email_10 10;
 
 In the log file, the program first records the information of the original graph,
 then records the inside nodes chosen by each heuristic.
@@ -148,3 +144,4 @@ and *heuii.cpp*, the program for inside-inside mergers, records in each line the
 - (6) the score using the unstable edges of the merger,
 - (7) the number of collisions caused by the merger in the (k-1)-truss, and
 - (8) the number of collisions caused by the merger in the k-truss. 
+
